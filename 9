@@ -1,0 +1,7 @@
+Find the continents where all countries have a population <= 25000000. 
+Then find the names of the countries associated with these continents. 
+Show name, continent and population.
+
+select name,continent,population from world 
+where continent in(select continent from world a 
+where 25000000 >= all(select population from world b where a.continent=b.continent))
