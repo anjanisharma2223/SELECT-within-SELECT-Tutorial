@@ -1,0 +1,4 @@
+List each continent and the name of the country that comes first alphabetically.
+
+select continent,name from world a 
+where name<=all(select name from world b where a.continent=b.continent)
